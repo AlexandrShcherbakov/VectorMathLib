@@ -34,9 +34,22 @@
 				</Linker>
 			</Target>
 		</Build>
-		<Unit filename="main.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Compiler>
+			<Add option="-std=c++11" />
+			<Add directory="include" />
+		</Compiler>
+		<Unit filename="include/main.h" />
+		<Unit filename="include/mat4.h" />
+		<Unit filename="include/vec2.h" />
+		<Unit filename="include/vec3.h" />
+		<Unit filename="include/vec4.h" />
+		<Unit filename="include/vector2.h" />
+		<Unit filename="include/vector3.h" />
+		<Unit filename="include/vector4.h" />
+		<Unit filename="src/mat4.cpp" />
+		<Unit filename="src/vec2.cpp" />
+		<Unit filename="src/vec3.cpp" />
+		<Unit filename="src/vec4.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
