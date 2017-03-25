@@ -23,39 +23,39 @@ public:
     vector4(const vector3<T>& v, const T w): x(v.x), y(v.y), z(v.z), w(w) {}
 
     ///Operators
-    inline friend const vector4 operator+(const vector4 &v, const vector4 &w) {
+    inline friend const vector4 operator+(const vector4 &v, const vector4 &w) noexcept {
         return vector4(v.x + w.x, v.y + w.y, v.z + w.z, v.w + w.w);
     }
 
-    inline friend const vector4 operator-(const vector4 &v, const vector4 &w) {
+    inline friend const vector4 operator-(const vector4 &v, const vector4 &w) noexcept {
         return vector4(v.x - w.x, v.y - w.y, v.z - w.z, v.w - w.w);
     }
 
-    inline friend const vector4 operator*(const vector4 &v, const vector4 &w) {
+    inline friend const vector4 operator*(const vector4 &v, const vector4 &w) noexcept {
         return vector4(v.x * w.x, v.y * w.y, v.z * w.z, v.w * w.w);
     }
 
-    inline friend const vector4 operator/(const vector4 &v, const vector4 &w) {
+    inline friend const vector4 operator/(const vector4 &v, const vector4 &w) noexcept {
         return vector4(v.x / w.x, v.y / w.y, v.z / w.z, v.w / w.w);
     }
 
-    const vector4 operator-() const {
+    const vector4 operator-() const noexcept {
         return vector4(-x, -y, -z, -w);
     }
 
-    inline friend vector4 operator+=(vector4 &v, const vector4 &w) {
+    inline friend vector4 operator+=(vector4 &v, const vector4 &w) noexcept {
         return v = v + w;
     }
 
-    inline friend vector4 operator-=(vector4 &v, const vector4 &w) {
+    inline friend vector4 operator-=(vector4 &v, const vector4 &w) noexcept {
         return v = v - w;
     }
 
-    inline friend vector4 operator*=(vector4 &v, const vector4 &w) {
+    inline friend vector4 operator*=(vector4 &v, const vector4 &w) noexcept {
         return v = v * w;
     }
 
-    inline friend vector4 operator/=(vector4 &v, const vector4 &w) {
+    inline friend vector4 operator/=(vector4 &v, const vector4 &w) noexcept {
         return v = v / w;
     }
 
@@ -73,13 +73,13 @@ public:
         );
     }
 
-    const vector3<T> xyz() const {
+    const vector3<T> xyz() const noexcept {
         return vector3<T>(x, y, z);
     }
 };
 
 template<typename T>
-bool operator==(const vector4<T> &v, const vector4<T> &w) {
+bool operator==(const vector4<T> &v, const vector4<T> &w) noexcept {
     return v.x == w.x
         && v.y == w.y
         && v.z == w.z
@@ -92,17 +92,17 @@ std::ostream& operator<<(std::ostream& out, const vector4<T>& v) {
 }
 
 template<typename T>
-const T min(const vector4<T>& v) {
+const T min(const vector4<T>& v) noexcept {
     return std::min(std::min(v.x, v.y), std::min(v.z, v.w));
 }
 
 template<typename T>
-const T max(const vector4<T>& v) {
+const T max(const vector4<T>& v) noexcept {
     return std::max(std::max(v.x, v.y), std::max(v.z, v.w));
 }
 
 template<typename T>
-const vector4<T> min(const vector4<T>& v, const vector4<T>& w) {
+const vector4<T> min(const vector4<T>& v, const vector4<T>& w) noexcept {
     return vector4<T>(
         std::min(v.x, w.x),
         std::min(v.y, w.y),
@@ -112,7 +112,7 @@ const vector4<T> min(const vector4<T>& v, const vector4<T>& w) {
 }
 
 template<typename T>
-const vector4<T> max(const vector4<T>& v, const vector4<T>& w) {
+const vector4<T> max(const vector4<T>& v, const vector4<T>& w) noexcept {
     return vector4<T>(
         std::max(v.x, w.x),
         std::max(v.y, w.y),
@@ -123,13 +123,13 @@ const vector4<T> max(const vector4<T>& v, const vector4<T>& w) {
 
 ///Dot production
 template<typename T>
-const T dot(const vector4<T>& v, const vector4<T>& w) {
+const T dot(const vector4<T>& v, const vector4<T>& w) noexcept {
     return v.x * w.x + v.y * w.y + v.z * w.z + v.w * w.w;
 }
 
 ///Cross production
 template<typename T>
-const vector3<T> cross(const vector4<T> &v, const vector4<T> &w) {
+const vector3<T> cross(const vector4<T> &v, const vector4<T> &w) noexcept {
     return vector3<T>(
         v.y * w.z - v.z * w.y,
         v.z * w.x - v.x * w.z,
