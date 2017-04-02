@@ -141,6 +141,7 @@ const vector3<T> cross(const vector4<T> &v, const vector4<T> &w) {
 using vec4 = vector4<float>;
 using uvec4 = vector4<uint>;
 using i16vec4 = vector4<short>;
+using byte4 = vector4<unsigned char>;
 
 }
 
