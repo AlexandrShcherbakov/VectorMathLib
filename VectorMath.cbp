@@ -38,6 +38,7 @@
 			<Add option="-std=c++11" />
 			<Add directory="include" />
 		</Compiler>
+		<Unit filename="include/byte4.h" />
 		<Unit filename="include/main.h" />
 		<Unit filename="include/mat4.h" />
 		<Unit filename="include/vec2.h" />

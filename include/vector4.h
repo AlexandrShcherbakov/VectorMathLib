@@ -144,6 +144,7 @@ using vec4 = vector4<float>;
 using uvec4 = vector4<uint>;
 using i16vec4 = vector4<short>;
 using byte4 = vector4<unsigned char>;
+using int4 = vector4<int>;
 
 }
 
