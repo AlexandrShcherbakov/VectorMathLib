@@ -21,6 +21,8 @@ public:
     vector4(const T val): x(val), y(val), z(val), w(val) {}
     vector4(const T* coords): x(coords[0]), y(coords[1]), z(coords[2]), w(coords[3]) {}
     vector4(const vector3<T>& v, const T w): x(v.x), y(v.y), z(v.z), w(w) {}
+    template<typename U>
+    vector4(const vector4<U>& v): x(v.x), y(v.y), z(v.z), w(v.w) {}
 
     ///Operators
     inline friend const vector4 operator+(const vector4 &v, const vector4 &w) {
